@@ -1,0 +1,37 @@
+<html>
+<title>Temperature Converter</title>
+<link rel="stylesheet" href="Level-1_t3.css">
+<body>
+<div class="card">
+    <h2 style="color:red;">TEMPERATURE </h2><h2 style="color:blue;"> CONVERTER</h2>
+    <label style="font-weight: bold;">Temperature:</label> <input class="input" type="number" id="temperature" > <br>
+    <hr class="under-line">
+    <br>
+    <input type="radio" name="degree" id="Celcius" value="celcius">Celcius &nbsp; <input type="radio" name="degree" value="Fahrenheit">Fahrenheit <br>
+    <br>
+    <input class="button" type="button" value="Convert" onclick="convert()">
+    <br>
+    <hr>
+    <p id="result" style="font-size: 20px;">
+    </p>
+
+</div>
+<script>
+function convert(){
+    let Num =document.getElementById("temperature").value;
+
+    if (document.getElementById("Celcius").checked)
+        {
+            Num = parseFloat(Num);
+            document.getElementById("result").innerHTML=(Num*1.8)+32 + "  Fahrenheit";
+        }
+        else
+        {
+            Num = parseFloat(Num);
+            document.getElementById("result").innerHTML=(Num-32)/1.8 + "  Celcius";
+        }
+}
+</script>
+
+</body>
+</html>
